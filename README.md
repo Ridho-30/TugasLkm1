@@ -212,7 +212,5 @@ products  (id) ──< orders.product_id
 
 ## Video Presentasi
 ```
-{
   https://youtu.be/vzGI9RNMh1k
-}
 ```
