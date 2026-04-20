@@ -1,4 +1,4 @@
-# Toko Online REST API
+# Toko Sederhana
 
 REST API untuk manajemen toko online yang mencakup operasi CRUD pada data pelanggan, produk, dan pesanan.
 
