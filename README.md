@@ -69,7 +69,7 @@ Edit file `appsettings.json`:
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Port=5432;Database=toko_online;Username=postgres;Password=[password anda]"
+    "DefaultConnection": "Host=localhost; Port=5432; Database=toko_lkm1; Username=postgres; Password=[password anda]"
   }
 }
 ```
@@ -78,7 +78,7 @@ Edit file `appsettings.json`:
 
 **Via psql:**
 ```bash
-psql -U postgres -f database.sql
+psql -U postgres -f toko_lkm1.sql
 ```
 
 **Via pgAdmin:**
