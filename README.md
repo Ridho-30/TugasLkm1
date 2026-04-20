@@ -41,8 +41,8 @@ TugasLkm1/
 │   ├── OrderRepository.cs
 │   └── ProductRepository.cs
 ├── appsettings.json
-├── Program.cs
-└── toko_lkm1.sql
+└── Program.cs
+
 ```
 
 ---
