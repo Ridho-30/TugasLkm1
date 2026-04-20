@@ -1,4 +1,5 @@
-# Toko
+# Toko Online REST API
+
 REST API untuk manajemen toko online yang mencakup operasi CRUD pada data pelanggan, produk, dan pesanan.
 
 - **Nama** : Ridho Rizky Prasetyo
@@ -6,14 +7,22 @@ REST API untuk manajemen toko online yang mencakup operasi CRUD pada data pelang
 - **Kelas** : A
 - **Mata Kuliah** : Pemrograman Antarmuka Aplikasi
 
+---
+
 ## Teknologi
-| Bahasa : C# 
-| Framework : ASP.NET Core Web API (.NET 8) 
-| Database : PostgreSQL 
-| Library : Npgsql 
-| Dokumentasi API : Swagger / OpenAPI 
+
+| Komponen | Detail |
+|----------|--------|
+| Bahasa | C# |
+| Framework | ASP.NET Core Web API (.NET 8) |
+| Database | PostgreSQL |
+| Library | Npgsql |
+| Dokumentasi API | Swagger |
+
+---
 
 ## Struktur Folder
+
 ```
 TugasLkm1/
 ├── Controllers/
@@ -36,55 +45,69 @@ TugasLkm1/
 └── toko_lkm1.sql
 ```
 
+---
+
 ## Instalasi & Menjalankan Project
+
 ### 1. Clone repository
+
 ```bash
 git clone https://github.com/Ridho-30/TugasLkm1.git
 cd TugasLkm1
 ```
 
 ### 2. Install dependency
+
 ```bash
 dotnet add package Npgsql
 ```
 
 ### 3. Sesuaikan connection string
+
 Edit file `appsettings.json`:
 
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Port=5432;Database=toko_online;Username=postgres;Password=[Password ANda]"
+    "DefaultConnection": "Host=localhost;Port=5432;Database=toko_online;Username=postgres;Password=[password anda]"
   }
 }
 ```
 
 ### 4. Import database
+
 **Via psql:**
 ```bash
-psql -U postgres -f toko_lkm1.sql
+psql -U postgres -f database.sql
 ```
 
 **Via pgAdmin:**
-Buka pgAdmin → pilih server → klik kanan database → Query Tool → buka file `toko_lkm1e.sql` → jalankan.
+Buka pgAdmin → pilih server → klik kanan database → Query Tool → buka file `toko_lkm1.sql` → jalankan.
 
 ### 5. Jalankan project
+
 ```bash
 dotnet run
 ```
+
 Buka Swagger UI di browser:
 ```
 https://localhost:{port}/swagger
 ```
 
+---
+
 ## Desain Database
+
 ### Relasi Tabel
+
 ```
 customers (id) ──< orders.customer_id
 products  (id) ──< orders.product_id
 ```
 
 ### Tabel: customers
+
 | Kolom | Tipe | Keterangan |
 |-------|------|------------|
 | id | SERIAL | Primary key |
@@ -127,17 +150,19 @@ products  (id) ──< orders.product_id
 ## Daftar Endpoint
 
 ### Customers
-| Method : URL [ Keterangan | Status Code ]
-----------------------------------------------
-| GET : /api/Customers [ Ambil semua customer | 200 ]
-| GET : /api/Customers/{id} [ Ambil customer by ID | 200 / 404 ]
-| POST : /api/Customers [ Tambah customer baru | 201 ]
-| PUT : /api/Customers/{id} [ Update customer | 200 / 404 ]
-| DELETE : /api/Customers/{id} [ Hapus customer | 200 / 404 ]
+
+| Method | URL | Keterangan | Status Code |
+|--------|-----|------------|-------------|
+| GET | /api/Customers | Ambil semua customer | 200 |
+| GET | /api/Customers/{id} | Ambil customer by ID | 200 / 404 |
+| POST | /api/Customers | Tambah customer baru | 201 |
+| PUT | /api/Customers/{id} | Update customer | 200 / 404 |
+| DELETE | /api/Customers/{id} | Hapus customer | 200 / 404 |
 
 ### Products
+
 | Method | URL | Keterangan | Status Code |
----------------------------------------------------------------
+|--------|-----|------------|-------------|
 | GET | /api/Products | Ambil semua produk aktif | 200 |
 | GET | /api/Products/{id} | Ambil produk by ID | 200 / 404 |
 | POST | /api/Products | Tambah produk baru | 201 |
@@ -145,6 +170,7 @@ products  (id) ──< orders.product_id
 | DELETE | /api/Products/{id} | Soft delete produk | 200 / 404 |
 
 ### Orders
+
 | Method | URL | Keterangan | Status Code |
 |--------|-----|------------|-------------|
 | GET | /api/Orders | Ambil semua order | 200 |
@@ -156,6 +182,7 @@ products  (id) ──< orders.product_id
 ---
 
 ## Format Response
+
 ### Sukses (data tunggal)
 ```json
 {
@@ -181,5 +208,6 @@ products  (id) ──< orders.product_id
 }
 ```
 
+---
+
 ## Video Presentasi
-youtube.xxx
