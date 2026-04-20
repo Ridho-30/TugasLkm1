@@ -1,6 +1,6 @@
 # Toko Sederhana
 
-REST API untuk manajemen toko online yang mencakup operasi CRUD pada data pelanggan, produk, dan pesanan.
+REST API untuk manajemen toko online yang mencakup operasi CRUD pada data Customers, Products, dan Orders.
 
 - **Nama** : Ridho Rizky Prasetyo
 - **NIM** : 242410102055
